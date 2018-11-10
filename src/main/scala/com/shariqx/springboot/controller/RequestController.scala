@@ -4,7 +4,7 @@ import java.lang.Iterable
 import java.util
 
 import com.shariqx.springboot.entity.StudentEntity
-import com.shariqx.springboot.serrvice.StudentService
+import com.shariqx.springboot.service.StudentService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.{GetMapping, PathVariable, RequestMapping, RestController}
 

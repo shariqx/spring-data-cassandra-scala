@@ -1,4 +1,4 @@
-package com.shariqx.springboot.serrvice
+package com.shariqx.springboot.service
 
 import java.lang.Iterable
 import java.util
