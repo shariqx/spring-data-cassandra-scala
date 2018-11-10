@@ -5,8 +5,9 @@ The build is packed with gradle. Scroll down for Installation.
 Concepts illustrated in the code (origin/master):
   -  ORM based access to the Database
   -  Dynamic query generation
-  - AutoWiring of Service and Repositories
-  - Entity-Json auto mapping using Spring Framework
+  -  Usage of @AllowFiltering for non indexed column filtering
+  -  AutoWiring of Service and Repositories
+  -  Entity-Json auto mapping using Spring Framework
 
 # Installation
 0 - Install Cassandra
