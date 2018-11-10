@@ -45,6 +45,7 @@ WITH replication = {'class': 'SimpleStrategy',.....
 The build should automatically run the Main class, however, to do so manually, Run the Main.scala file
 
 # Roadmap
+  - Add Tests
   - Add templats for webservice outputs for pure MVC
   - Reactive Cassandra support for Streaming data access
   - Caching
