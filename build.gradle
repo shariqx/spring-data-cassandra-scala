@@ -29,13 +29,14 @@ dependencies {
 
     // spring data
     compile('org.springframework.boot:spring-boot-starter-data-cassandra')
-
+    compile("io.jsonwebtoken:jjwt:0.7.0")
    // compile("com.fasterxml.jackson.module:jackson-module-scala_2.12")
 
     // spring boot
     compile("org.springframework.boot:spring-boot-starter:${property('springBoot.version')}"){
         exclude module: "spring-boot-starter-logging"
     }
+    compile "org.springframework.boot:spring-boot-starter-security"
     compile("org.springframework.boot:spring-boot-starter-web"){
         exclude module: "spring-boot-starter-tomcat"
         exclude module: "spring-boot-starter-logging"

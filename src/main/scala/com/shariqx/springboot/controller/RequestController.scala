@@ -14,7 +14,7 @@ class RequestController(@Autowired m_studentService: StudentService) {
     
     
     @GetMapping(path = Array("/"))
-    def getAllStudents(): Iterable[StudentEntity] = {
+    def getStudents(): Iterable[StudentEntity] = {
         m_studentService.findAllStudents()
     }
     
