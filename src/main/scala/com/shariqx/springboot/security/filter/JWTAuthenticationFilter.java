@@ -56,7 +56,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 .compact();
         System.out.println(req.getMethod());
         res.setHeader("Access-Control-Allow-Origin", "*");
-        res.setHeader("Access-Control-Allow-Methods", "POST,OPTIONS"); //"POST, GET, OPTIONS, DELETE"
+        res.setHeader("Access-Control-Allow-Methods", "POST,OPTIONS,GET"); //"POST, GET, OPTIONS, DELETE"
         //res.setHeader("Access-Control-Max-Age", "3600");
         res.setHeader("Access-Control-Allow-Headers", "Content-Type");
         res.setHeader("Access-Control-Expose-Headers", "Authorization");

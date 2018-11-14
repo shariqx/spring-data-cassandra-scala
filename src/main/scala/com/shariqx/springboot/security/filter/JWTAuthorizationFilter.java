@@ -2,6 +2,7 @@ package com.shariqx.springboot.security.filter;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureException;
 import io.jsonwebtoken.impl.DefaultClaims;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -29,6 +30,7 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
     protected void doFilterInternal(HttpServletRequest req,
                                     HttpServletResponse res,
                                     FilterChain chain) throws IOException, ServletException {
+        System.out.println(req.getMethod());
         if (req.getMethod().equals("OPTIONS")) {
             res.setStatus(200);
             res.addHeader("Access-Control-Allow-Origin", "*");
@@ -37,7 +39,8 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 
         String header = req.getHeader(HEADER_STRING);
         if (header == null || !header.startsWith(TOKEN_PREFIX)) {
-            chain.doFilter(req, res);
+            res.setStatus(403);
+            //chain.doFilter(req, res);
             return;
         }
         // parse the token.
@@ -51,6 +54,12 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
         }
         catch (ExpiredJwtException e) {
             res.setStatus(401);
+            return;
+        }
+        catch(SignatureException se) {
+            res.setStatus(401);
+            res.getWriter().write("Invalid Token!");
+            chain.doFilter(req,res);
             return;
         }
         String user = claim.getSubject();
