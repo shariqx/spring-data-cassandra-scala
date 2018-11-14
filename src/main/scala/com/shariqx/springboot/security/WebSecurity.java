@@ -28,8 +28,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, SIGN_UP_URL).permitAll() //No restriction for Sign Up page.
                 .anyRequest().authenticated()
                 .and().cors().and()
-                .addFilter(new JWTAuthenticationFilter(authenticationManager())) //Authentication Filter
-                .addFilter(new JWTAuthorizationFilter(authenticationManager())); //Authorization Filter
+                .addFilter(new JWTAuthenticationFilter(authenticationManager()));
     }
 
     @Override

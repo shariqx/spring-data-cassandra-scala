@@ -54,10 +54,11 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 .setExpiration(new Date(System.currentTimeMillis() + SecurityConstants.EXPIRATION_TIME + 10000))
                 .signWith(SignatureAlgorithm.HS512, SecurityConstants.SECRET)
                 .compact();
+        System.out.println(req.getMethod());
         res.setHeader("Access-Control-Allow-Origin", "*");
-        res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
-        res.setHeader("Access-Control-Max-Age", "3600");
-        //res.setHeader("Access-Control-Allow-Headers", "x-requested-with");
+        res.setHeader("Access-Control-Allow-Methods", "POST,OPTIONS"); //"POST, GET, OPTIONS, DELETE"
+        //res.setHeader("Access-Control-Max-Age", "3600");
+        res.setHeader("Access-Control-Allow-Headers", "Content-Type");
         res.setHeader("Access-Control-Expose-Headers", "Authorization");
         res.setHeader(SecurityConstants.HEADER_STRING, SecurityConstants.TOKEN_PREFIX + token);
         //chain.doFilter(req,res);
