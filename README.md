@@ -26,7 +26,7 @@ $ gradle build
 ```
 .... or better yet, use intellij and import as  a gradle project.
 
-5 - Make necessary change for keyspance and contact-points  in application.yaml:
+5 - Make necessary change for keyspace and contact-points  in application.yaml:
 ```sh
 spring:
    data:
@@ -47,7 +47,7 @@ The build should automatically run the Main class, however, to do so manually, R
 
 # Roadmap
   - Add Tests
-  - Add templats for webservice outputs for pure MVC
+  - Add templates for webservice outputs for pure MVC
   - Reactive Cassandra support for Streaming data access
   - Caching
   - Custom Query support demonstration with `@Query`
